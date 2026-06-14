@@ -1,0 +1,473 @@
+
+/* Заголовок консультации */
+.consultation-header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 40px 20px;
+    background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+    border-radius: 15px;
+    border: 1px solid #93c5fd;
+}
+
+.consultation-header h1 {
+    color: #1e40af;
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.consultation-header p {
+    font-size: 1.2rem;
+    color: #1e40af;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Формы консультации */
+.consultation-forms {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.consultation-form {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.05);
+    border: 2px solid #dbeafe;
+}
+
+.consultation-form h3 {
+    color: #1e40af;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.consultation-form h3::before {
+    content: '💬';
+    font-size: 1.2rem;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #475569;
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #1a5fb4;
+    box-shadow: 0 0 0 3px rgba(26, 95, 180, 0.1);
+}
+
+.form-group textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.btn-consult {
+    width: 100%;
+    padding: 15px;
+    background: #1a5fb4;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-consult:hover {
+    background: #2d7bd4;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(26, 95, 180, 0.2);
+}
+
+/* Фармацевты */
+.pharmacists-section {
+    margin-bottom: 50px;
+}
+
+.pharmacists-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.pharmacist-card {
+    background: white;
+    border-radius: 12px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s;
+    border: 1px solid #e2e8f0;
+}
+
+.pharmacist-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    border-color: #1a5fb4;
+}
+
+.pharmacist-avatar {
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(135deg, #1a5fb4 0%, #2d7bd4 100%);
+    border-radius: 50%;
+    margin: 0 auto 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.pharmacist-info h4 {
+    color: #1e293b;
+    margin-bottom: 5px;
+    font-size: 1.2rem;
+}
+
+.pharmacist-specialty {
+    color: #64748b;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.pharmacist-stats {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.stat {
+    text-align: center;
+}
+
+.stat-value {
+    font-weight: 700;
+    color: #1a5fb4;
+    font-size: 1.1rem;
+}
+
+.stat-label {
+    color: #64748b;
+    font-size: 0.8rem;
+}
+
+.pharmacist-rating {
+    color: #f59e0b;
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+}
+
+/* Онлайн-чат */
+.chat-section {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    margin-bottom: 50px;
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.05);
+    border: 2px solid #dbeafe;
+}
+
+.chat-container {
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.chat-messages {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    background: #f8fafc;
+}
+
+.message {
+    margin-bottom: 15px;
+    max-width: 80%;
+}
+
+.message.bot {
+    margin-right: auto;
+}
+
+.message.user {
+    margin-left: auto;
+}
+
+.message-content {
+    padding: 12px 15px;
+    border-radius: 15px;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+.message.bot .message-content {
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 15px 15px 15px 5px;
+}
+
+.message.user .message-content {
+    background: #1a5fb4;
+    color: white;
+    border-radius: 15px 15px 5px 15px;
+}
+
+.message-time {
+    font-size: 0.8rem;
+    color: #94a3b8;
+    margin-top: 5px;
+    text-align: right;
+}
+
+.message.user .message-time {
+    text-align: left;
+}
+
+.chat-input-area {
+    padding: 15px;
+    border-top: 1px solid #e2e8f0;
+    background: white;
+    display: flex;
+    gap: 10px;
+}
+
+.chat-input-area input {
+    flex: 1;
+    padding: 12px 15px;
+    border: 1px solid #cbd5e1;
+    border-radius: 25px;
+    font-size: 1rem;
+}
+
+.chat-input-area button {
+    background: #1a5fb4;
+    color: white;
+    border: none;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    transition: background 0.3s;
+}
+
+.chat-input-area button:hover {
+    background: #2d7bd4;
+}
+
+/* FAQ консультации */
+.consultation-faq {
+    margin-bottom: 50px;
+}
+
+.faq-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.faq-item {
+    background: white;
+    border-radius: 12px;
+    padding: 25px;
+    border-left: 4px solid #1a5fb4;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.faq-item h4 {
+    color: #1e293b;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+.faq-item p {
+    color: #64748b;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+/* Преимущества консультаций */
+.benefits-consultation {
+    background: #f8fafc;
+    border-radius: 15px;
+    padding: 40px;
+    margin-bottom: 50px;
+    border: 1px solid #e2e8f0;
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.benefit-item {
+    text-align: center;
+    padding: 20px;
+}
+
+.benefit-icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    color: #1a5fb4;
+    display: block;
+}
+
+.benefit-item h4 {
+    color: #1e293b;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+.benefit-item p {
+    color: #64748b;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+/* Расписание консультаций */
+.schedule-section {
+    margin-bottom: 50px;
+}
+
+.schedule-table {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    margin-top: 20px;
+}
+
+.schedule-row {
+    display: grid;
+    grid-template-columns: 150px 1fr 150px;
+    padding: 15px 20px;
+    border-bottom: 1px solid #e2e8f0;
+    align-items: center;
+}
+
+.schedule-row:last-child {
+    border-bottom: none;
+}
+
+.schedule-row.header {
+    background: #f1f5f9;
+    font-weight: 600;
+    color: #1e293b;
+}
+
+.time-slot {
+    color: #1a5fb4;
+    font-weight: 500;
+}
+
+.pharmacist-name {
+    color: #1e293b;
+    font-weight: 500;
+}
+
+.availability {
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-align: center;
+}
+
+.available {
+    background: #d1fae5;
+    color: #065f46;
+}
+
+.busy {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+/* Адаптивность консультации */
+@media (max-width: 768px) {
+    .consultation-header {
+        padding: 30px 15px;
+    }
+    
+    .consultation-header h1 {
+        font-size: 2rem;
+    }
+    
+    .consultation-forms {
+        grid-template-columns: 1fr;
+    }
+    
+    .pharmacists-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .faq-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .schedule-row {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        text-align: center;
+    }
+    
+    .benefits-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .chat-container {
+        height: 300px;
+    }
+    
+    .pharmacist-stats {
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    .consultation-form {
+        padding: 20px 15px;
+    }
+}

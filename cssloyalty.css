@@ -1,0 +1,532 @@
+
+/* Заголовок программы лояльности */
+.loyalty-header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 40px 20px;
+    background: linear-gradient(135deg, #fef3c7 0%, #fcd34d 100%);
+    border-radius: 15px;
+    border: 1px solid #fbbf24;
+}
+
+.loyalty-header h1 {
+    color: #92400e;
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.loyalty-header p {
+    font-size: 1.2rem;
+    color: #78350f;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Уровни программы */
+.loyalty-levels {
+    margin-bottom: 50px;
+}
+
+.levels-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.level-card {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s;
+    border: 2px solid transparent;
+    position: relative;
+    overflow: hidden;
+}
+
+.level-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+}
+
+.level-card.premium {
+    border-color: #f59e0b;
+    background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+}
+
+.level-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+}
+
+.level-card.standard::before {
+    background: #1a5fb4;
+}
+
+.level-card.premium::before {
+    background: #f59e0b;
+}
+
+.level-card.family::before {
+    background: #10b981;
+}
+
+.level-icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.level-card h3 {
+    color: #1e293b;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.level-price {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1a5fb4;
+    margin-bottom: 20px;
+}
+
+.level-card.premium .level-price {
+    color: #92400e;
+}
+
+.level-features {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+.level-features li {
+    padding: 8px 0;
+    padding-left: 25px;
+    position: relative;
+    color: #475569;
+}
+
+.level-features li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #10b981;
+    font-weight: bold;
+}
+
+.btn-level {
+    width: 100%;
+    padding: 15px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    border: none;
+}
+
+.level-card.standard .btn-level {
+    background: #1a5fb4;
+    color: white;
+}
+
+.level-card.premium .btn-level {
+    background: #92400e;
+    color: white;
+}
+
+.level-card.family .btn-level {
+    background: #10b981;
+    color: white;
+}
+
+.btn-level:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Преимущества программы */
+.benefits-section {
+    background: #f8fafc;
+    border-radius: 15px;
+    padding: 40px;
+    margin-bottom: 50px;
+    border: 1px solid #e2e8f0;
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.benefit-card {
+    background: white;
+    border-radius: 12px;
+    padding: 25px;
+    text-align: center;
+    transition: transform 0.3s;
+    border: 1px solid #e2e8f0;
+}
+
+.benefit-card:hover {
+    transform: translateY(-5px);
+    border-color: #1a5fb4;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.benefit-icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    color: #1a5fb4;
+    display: block;
+}
+
+.benefit-card h4 {
+    color: #1e293b;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.benefit-card p {
+    color: #64748b;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* Как это работает */
+.how-it-works {
+    margin-bottom: 50px;
+}
+
+.steps-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 40px;
+    position: relative;
+}
+
+.steps-container::before {
+    content: '';
+    position: absolute;
+    top: 40px;
+    left: 10%;
+    right: 10%;
+    height: 2px;
+    background: #cbd5e1;
+    z-index: 1;
+}
+
+.step {
+    background: white;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #1a5fb4;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    flex-shrink: 0;
+}
+
+.step-description {
+    text-align: center;
+    margin-top: 15px;
+    max-width: 200px;
+}
+
+.step-description h4 {
+    color: #1e293b;
+    margin-bottom: 8px;
+    font-size: 1.1rem;
+}
+
+.step-description p {
+    color: #64748b;
+    font-size: 0.9rem;
+}
+
+/* Таблица сравнения */
+.comparison-table {
+    margin-bottom: 50px;
+    overflow-x: auto;
+}
+
+.table-wrapper {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+}
+
+.comparison-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.comparison-table th {
+    background: #f1f5f9;
+    padding: 20px;
+    text-align: center;
+    font-weight: 600;
+    color: #1e293b;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.comparison-table th.premium {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.comparison-table td {
+    padding: 15px 20px;
+    border-bottom: 1px solid #e2e8f0;
+    text-align: center;
+    color: #475569;
+}
+
+.comparison-table tr:last-child td {
+    border-bottom: none;
+}
+
+.feature-name {
+    text-align: left;
+    font-weight: 500;
+    color: #1e293b;
+}
+
+.check-icon {
+    color: #10b981;
+    font-size: 1.2rem;
+}
+
+.cross-icon {
+    color: #ef4444;
+    font-size: 1.2rem;
+}
+
+/* Форма регистрации */
+.registration-form {
+    background: white;
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.05);
+    margin-bottom: 50px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.registration-form h2 {
+    text-align: center;
+    color: #1e293b;
+    margin-bottom: 30px;
+    font-size: 1.8rem;
+}
+
+.form-row {
+    margin-bottom: 20px;
+}
+
+.form-row label {
+    display: block;
+    margin-bottom: 8px;
+    color: #475569;
+    font-weight: 500;
+}
+
+.form-row input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.form-row input:focus {
+    outline: none;
+    border-color: #1a5fb4;
+    box-shadow: 0 0 0 3px rgba(26, 95, 180, 0.1);
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.checkbox-group input {
+    width: auto;
+    margin-top: 5px;
+}
+
+.checkbox-group label {
+    font-weight: normal;
+    font-size: 0.95rem;
+}
+
+.btn-submit {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.btn-submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(245, 158, 11, 0.3);
+}
+
+/* FAQ по программе */
+.loyalty-faq {
+    margin-bottom: 50px;
+}
+
+.faq-list {
+    max-width: 800px;
+    margin: 30px auto 0;
+}
+
+.faq-item {
+    background: white;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    overflow: hidden;
+    border: 1px solid #e2e8f0;
+}
+
+.faq-question {
+    padding: 20px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.faq-question:hover {
+    background: #f8fafc;
+}
+
+.faq-question h4 {
+    color: #1e293b;
+    margin: 0;
+    font-size: 1.1rem;
+    flex: 1;
+}
+
+.faq-toggle {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #1a5fb4;
+    transition: transform 0.3s;
+}
+
+.faq-answer {
+    padding: 0 25px;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.faq-answer.active {
+    padding: 0 25px 25px;
+    max-height: 1000px;
+}
+
+.faq-answer p {
+    color: #475569;
+    line-height: 1.6;
+}
+
+/* Адаптивность программы лояльности */
+@media (max-width: 1024px) {
+    .steps-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+    }
+    
+    .steps-container::before {
+        top: 0;
+        left: 50%;
+        width: 2px;
+        height: 100%;
+        transform: translateX(-50%);
+    }
+    
+    .step-description {
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 768px) {
+    .loyalty-header {
+        padding: 30px 15px;
+    }
+    
+    .loyalty-header h1 {
+        font-size: 2rem;
+    }
+    
+    .levels-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .benefits-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .comparison-table {
+        font-size: 0.9rem;
+    }
+    
+    .registration-form {
+        padding: 25px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .step {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+    }
+    
+    .comparison-table th,
+    .comparison-table td {
+        padding: 10px;
+        font-size: 0.85rem;
+    }
+    
+    .faq-question {
+        padding: 15px 20px;
+    }
+    
+    .faq-question h4 {
+        font-size: 1rem;
+    }
+}

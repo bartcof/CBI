@@ -1,0 +1,168 @@
+/* ===== СТИЛИ ДЛЯ МАСКОТА-ВИДЖЕТА ===== */
+        /* Кнопка вызова маскота в футере */
+        .mascot-call-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background: linear-gradient(135deg, #2ecc71, #27ae60);
+            color: white;
+            padding: 10px 16px;
+            border-radius: 50px;
+            font-weight: 500;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+            width: 100%;
+            max-width: 220px;
+            margin-top: 12px;
+            box-shadow: 0 2px 8px rgba(46, 204, 113, 0.3);
+        }
+        .mascot-call-btn:hover {
+            background: linear-gradient(135deg, #27ae60, #219a52);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(46, 204, 113, 0.4);
+        }
+        .mascot-call-btn:active {
+            transform: translateY(0);
+        }
+        .mascot-call-btn span {
+            font-size: 20px;
+        }
+
+        /* Виджет маскота (изначально скрыт) */
+        .cbi-mascot-widget {
+            position: fixed;
+            bottom: 100px;
+            right: 20px;
+            z-index: 1000;
+            display: none;
+            animation: mascotSlideIn 0.4s ease-out;
+        }
+        .cbi-mascot-widget.active {
+            display: block;
+        }
+
+        @keyframes mascotSlideIn {
+            from {
+                opacity: 0;
+                transform: translateX(100px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .cbi-mascot {
+            position: relative;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+        .cbi-mascot:hover {
+            transform: scale(2.05);
+        }
+
+        .mascot-image {
+            position: relative;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: white;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            overflow: hidden;
+            border: 3px solid #2ecc71;
+            transition: all 0.3s ease;
+        }
+        .mascot-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .mascot-pulse {
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            right: -5px;
+            bottom: -5px;
+            border-radius: 50%;
+            background: rgba(46, 204, 113, 0.4);
+            animation: pulse 2s infinite;
+            z-index: -1;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(0.95);
+                opacity: 0.7;
+            }
+            70% {
+                transform: scale(1.2);
+                opacity: 0;
+            }
+            100% {
+                transform: scale(0.95);
+                opacity: 0;
+            }
+        }
+
+        .mascot-speech {
+            position: absolute;
+            bottom: 90px;
+            right: 0;
+            background: rgba(255, 255, 255, 0);
+            padding: 10px 15px;
+            border-radius: 20px 20px 20px 5px;
+            font-size: 13px;
+            font-weight: 500;
+            color: #ff0000;
+            white-space: nowrap;
+            box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
+            border-left: 4px solid #cc2e2e;
+            transition: all 0.3s ease;
+            pointer-events: none;
+        }
+
+        /* Кнопка закрытия виджета */
+        .mascot-close {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            width: 24px;
+            height: 24px;
+            background: #e74c3c;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.2s ease;
+            z-index: 10;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+        }
+        .mascot-close:hover {
+            background: #c0392b;
+            transform: scale(1.1);
+        }
+
+        /* Адаптивность */
+        @media (max-width: 768px) {
+            .cbi-mascot-widget {
+                bottom: 80px;
+                right: 15px;
+            }
+            .mascot-image {
+                width: 65px;
+                height: 65px;
+            }
+            .mascot-speech {
+                bottom: 75px;
+                font-size: 11px;
+                white-space: nowrap;
+            }
+        }

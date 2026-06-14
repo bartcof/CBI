@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Программа лояльности CBI Premium - Аптека CBI</title>
+    <link rel="stylesheet" href="AI.css">
+    <link rel="stylesheet" href="cssmain.css">
+    <link rel="stylesheet" href="cssloyalty.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap">
+    <link rel="icon" href="images/logo/cbi-logo.png" type="image/x-icon">
+</head>
+<body>
+    <!-- Шапка (как в index.html) -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+               <img src="7ea79be2f1a11f1b7e21e89f93961fd_2.png" width="200" height="200" alt="CBI Аптека">
+                <div class="logo-text">
+                    <h1>CBI Pharmacy</h1>
+                    <p>Ваше здоровье в приоритете</p>
+                </div>
+            </div>
+            <div class="header-controls">
+                <div class="contact-info">
+                    <p>Горячая линия: +7(800)555-00-00</p>
+                    <p>24/7 поддержка</p>
+                </div>
+                <div class="user-menu">
+                    <a href="personal-cabinet.html" class="btn-login">
+                        <span>👤</span>
+                        Вход
+                    </a>
+                    <a href="#" class="cart-icon">
+                        <span>🛒</span>
+                        <span class="cart-count">0</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Навигация (как в index.html) -->
+    <nav class="main-nav">
+        <div class="container">
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li>
+                    <a href="catalog.html">Каталог товаров</a>
+                    <ul class="submenu">
+                        <li><a href="catalog.html?category=medicines">Лекарства</a></li>
+                        <li><a href="catalog.html?category=vitamins">Витамины и БАДы</a></li>
+                        <li><a href="catalog.html?category=cosmetics">Косметика</a></li>
+                        <li><a href="catalog.html?category=children">Детские товары</a></li>
+                        <li><a href="catalog.html?category=medical">Медицинские изделия</a></li>
+                    </ul>
+                </li>
+                <li><a href="news.html">Новости и акции</a></li>
+                <li><a href="encyclopedia.html">Энциклопедия здоровья</a></li>
+                <li><a href="community.html">Сообщество CBI</a></li>
+                <li>
+                    <a href="services.html" class="active">Сервисы</a>
+                    <ul class="submenu">
+                        <li><a href="order-medicine.html">Запрос лекарств</a></li>
+                        <li><a href="consultation.html">Консультация фармацевта</a></li>
+                        <li><a href="personal-medkit.html">Персональная аптечка</a></li>
+                        <li><a href="loyalty.html">Программа лояльности</a></li>
+                    </ul>
+                </li>
+                <li><a href="about.html">О сети CBI</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Основное содержимое программы лояльности -->
+    <main>
+        <div class="container">
+            <!-- Заголовок -->
+            <div class="loyalty-header">
+                <h1>Программа лояльности CBI Premium</h1>
+                <p>Получите максимум выгоды от покупок в аптеках CBI. Накопительные баллы, персональные скидки и эксклюзивные сервисы.</p>
+            </div>
+
+            <!-- Уровни программы -->
+            <section class="loyalty-levels">
+                <h2 class="section-header">Выберите свой уровень</h2>
+                <p class="section-subtitle">Три программы на любой уровень потребностей</p>
+                
+                <div class="levels-grid">
+                    <!-- Стандарт -->
+                    <div class="level-card standard">
+                        <span class="level-icon">🎯</span>
+                        <h3>Стандарт</h3>
+                        <div class="level-price">Бесплатно</div>
+                        <ul class="level-features">
+                            <li>Накопительные баллы (1 балл = 1 рубль)</li>
+                            <li>Персональные предложения по email</li>
+                            <li>Доступ к онлайн-консультациям</li>
+                            <li>Участие в акциях и розыгрышах</li>
+                            <li>Бесплатная доставка от 2000 ₽</li>
+                        </ul>
+                        <button class="btn-level">Присоединиться бесплатно</button>
+                    </div>
+                    
+                    <!-- Премиум -->
+                    <div class="level-card premium">
+                        <span class="level-icon">🏆</span>
+                        <h3>Premium</h3>
+                        <div class="level-price">999 ₽/год</div>
+                        <ul class="level-features">
+                            <li><strong>Все преимущества Стандарта +</strong></li>
+                            <li>Двойные бонусные баллы</li>
+                            <li>Персональная скидка 10% на всё</li>
+                            <li>Бесплатная доставка от 1000 ₽</li>
+                            <li>Приоритетное обслуживание</li>
+                            <li>Доступ к эксклюзивным вебинарам</li>
+                            <li>Бесплатные консультации фармацевта</li>
+                        </ul>
+                        <button class="btn-level">Перейти на Premium</button>
+                    </div>
+                    
+                    <!-- Семейный -->
+                    <div class="level-card family">
+                        <span class="level-icon">👨‍👩‍👧‍👦</span>
+                        <h3>Семейный</h3>
+                        <div class="level-price">1,499 ₽/год</div>
+                        <ul class="level-features">
+                            <li><strong>Все преимущества Premium +</strong></li>
+                            <li>До 5 членов семьи в программе</li>
+                            <li>Детские скидки до 15%</li>
+                            <li>Бесплатная доставка любых заказов</li>
+                            <li>Экспресс-доставка за 2 часа</li>
+                            <li>Персональный менеджер</li>
+                            <li>Составление семейной аптечки</li>
+                        </ul>
+                        <button class="btn-level">Выбрать для семьи</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Преимущества программы -->
+            <section class="benefits-section">
+                <h2 class="section-header">Почему выбирают CBI Premium</h2>
+                <p class="section-subtitle">Более 50,000 довольных участников программы</p>
+                
+                <div class="benefits-grid">
+                    <div class="benefit-card">
+                        <span class="benefit-icon">💰</span>
+                        <h4>Накопительные баллы</h4>
+                        <p>1 балл = 1 рубль. Накопленные баллы можно потратить на любые товары в аптеках CBI.</p>
+                    </div>
+                    
+                    <div class="benefit-card">
+                        <span class="benefit-icon">🎁</span>
+                        <h4>Персональные предложения</h4>
+                        <p>Скидки и акции, подобранные специально для вас на основе истории покупок.</p>
+                    </div>
+                    
+                    <div class="benefit-card">
+                        <span class="benefit-icon">🚚</span>
+                        <h4>Бесплатная доставка</h4>
+                        <p>Быстрая доставка лекарств на дом. Для Premium - доставка от 1000 рублей.</p>
+                    </div>
+                    
+                    <div class="benefit-card">
+                        <span class="benefit-icon">👨‍⚕️</span>
+                        <h4>Экспертные консультации</h4>
+                        <p>Бесплатные консультации фармацевтов онлайн и в аптеках.</p>
+                    </div>
+                    
+                    <div class="benefit-card">
+                        <span class="benefit-icon">📱</span>
+                        <h4>Удобное управление</h4>
+                        <p>Личный кабинет с историей покупок, бонусами и персонализированными предложениями.</p>
+                    </div>
+                    
+                    <div class="benefit-card">
+                        <span class="benefit-icon">🎫</span>
+                        <h4>Эксклюзивные мероприятия</h4>
+                        <p>Приглашения на вебинары, мастер-классы и дни здоровья для участников Premium.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Как это работает -->
+            <section class="how-it-works">
+                <h2 class="section-header">Как присоединиться к программе</h2>
+                <p class="section-subtitle">Всего 3 простых шага</p>
+                
+                <div class="steps-container">
+                    <div class="step-column">
+                        <div class="step">1</div>
+                        <div class="step-description">
+                            <h4>Зарегистрируйтесь</h4>
+                            <p>Создайте аккаунт на сайте или в мобильном приложении CBI</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step-column">
+                        <div class="step">2</div>
+                        <div class="step-description">
+                            <h4>Получите карту</h4>
+                            <p>Активируйте виртуальную карту в личном кабинете или получите пластиковую в аптеке</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step-column">
+                        <div class="step">3</div>
+                        <div class="step-description">
+                            <h4>Начинайте копить</h4>
+                            <p>Совершайте покупки, участвуйте в акциях и получайте бонусы</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Таблица сравнения -->
+            <section class="comparison-section">
+                <h2 class="section-header">Сравнение тарифов</h2>
+                
+                <div class="comparison-table">
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Преимущества</th>
+                                    <th>Стандарт</th>
+                                    <th class="premium">Premium</th>
+                                    <th>Семейный</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="feature-name">Стоимость участия</td>
+                                    <td>Бесплатно</td>
+                                    <td class="premium">999 ₽/год</td>
+                                    <td>1,499 ₽/год</td>
+                                </tr>
+                                <tr>
+                                    <td class="feature-name">Накопительные баллы</td>
+                                    <td><span class="check-icon">✓</span> 1 балл = 1 рубль</td>
+                                    <td class="premium"><span class="check-icon">✓</span> 2 балла = 1 рубль</td>
+                                    <td><span class="check-icon">✓</span> 2 балла = 1 рубль</td>
+                                </tr>
+                                <tr>
+                                    <td class="feature-name">Персональная скидка</td>
+                                    <td><span class="cross-icon">✗</span></td>
+                                    <td class="premium"><span class="check-icon">✓</span> 10% на всё</td>
+                                    <td><span class="check-icon">✓</span> 10% на всё</td>
+                                </tr>
+                                <tr>
+                                    <td class="feature-name">Бесплатная доставка</td>
+                                    <td>от 2000 ₽</td>
+                                    <td class="premium">от 1000 ₽</td>
+                                    <td>все заказы</td>
+                                </tr>
+                                <tr>
+                                    <td class="feature-name">Количество участников</td>
+                                    <td>1 человек</td>
+                                    <td class="premium">1 человек</td>
+                                    <td>до 5 человек</td>
+                                </tr>
+                                <tr>
+                                    <td class="feature-name">Консультации фармацевта</td>
+                                    <td>Базовые</td>
+                                    <td class="premium"><span class="check-icon">✓</span> Приоритетные</td>
+                                    <td><span class="check-icon">✓</span> Персональные</td>
+                                </tr>
+                                <tr>
+                                    <td class="feature-name">Экспресс-доставка</td>
+                                    <td><span class="cross-icon">✗</span></td>
+                                    <td class="premium">за 300 ₽</td>
+                                    <td><span class="check-icon">✓</span> Бесплатно</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Форма регистрации -->
+            <section class="registration-section">
+                <div class="registration-form">
+                    <h2>Присоединиться к CBI Premium</h2>
+                    <form>
+                        <div class="form-row">
+                            <label for="fullName">ФИО *</label>
+                            <input type="text" id="fullName" placeholder="Иванов Иван Иванович" required>
+                        </div>
+                        
+                        <div class="form-row">
+                            <label for="phone">Телефон *</label>
+                            <input type="tel" id="phone" placeholder="+7 (999) 123-45-67" required>
+                        </div>
+                        
+                        <div class="form-row">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" placeholder="example@mail.ru" required>
+                        </div>
+                        
+                        <div class="form-row">
+                            <label for="program">Выберите программу *</label>
+                            <select id="program" required>
+                                <option value="">Выберите программу</option>
+                                <option value="standard">Стандарт (бесплатно)</option>
+                                <option value="premium">Premium (999 ₽/год)</option>
+                                <option value="family">Семейный (1,499 ₽/год)</option>
+                            </select>
+                        </div>
+                        
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="agreeTerms" required>
+                            <label for="agreeTerms">Я согласен с условиями программы лояльности и политикой конфиденциальности</label>
+                        </div>
+                        
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="newsletter">
+                            <label for="newsletter">Хочу получать информацию об акциях и новинках</label>
+                        </div>
+                        
+                        <button type="submit" class="btn-submit">Стать участником программы</button>
+                    </form>
+                </div>
+            </section>
+
+            <!-- FAQ -->
+            <section class="loyalty-faq">
+                <h2 class="section-header">Частые вопросы о программе</h2>
+                
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h4>Как активировать карту CBI Premium?</h4>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>После регистрации в программе вам будет доступна виртуальная карта в личном кабинете. Для активации пластиковой карты обратитесь в любую аптеку CBI с документом, удостоверяющим личность.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h4>Как рассчитываются бонусные баллы?</h4>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Баллы начисляются в размере 1% от суммы покупки для участников Стандарт и 2% для участников Premium и Семейный. Баллы становятся доступными для использования через 24 часа после покупки.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h4>Можно ли передать карту другому человеку?</h4>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Карта именная и не подлежит передаче другим лицам. Для программы Семейный возможно добавление до 4 членов семьи, каждый из которых получит свою карту.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h4>Что делать при утере карты?</h4>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>В случае утери карты немедленно заблокируйте ее через личный кабинет или по телефону горячей линии. Восстановление карты бесплатно, баллы сохраняются.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h4>Как отменить подписку Premium?</h4>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Вы можете отменить подписку в любое время через личный кабинет. При отмене до истечения срока подписки производится перерасчет неиспользованной части.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Футер (как в index.html) -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>Аптека CBI</h3>
+                    <p>Сеть современных аптек, где здоровье клиентов - наш главный приоритет. Работаем с 1995 года.</p>
+                   <div class="social-links">
+                        <a href="#" title="ВКонтакте"><img src="i (2) (1).png" width="30" height="30" alt="CBI Аптека"></a>
+                        <a href="#" title="MAX"><img src="fotor_2026-04-03_09-42-40 (1) (1).png" width="30" height="30" alt="CBI Аптека"></a>
+                        <a href="#" title="VK Video"><img src="VK_Video.svg (1).png" width="30" height="30" alt="CBI Аптека"></a>
+                        <a href="#" title="Rutube"><img src="620x530-2 (1).png" width="30" height="30" alt="CBI Аптека"></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Клиентам</h3>
+                    <ul>
+                        <li><a href="loyalty.html">Программа лояльности CBI Premium</a></li>
+                        <li><a href="delivery.html">Доставка и оплата</a></li>
+                        <li><a href="return.html">Возврат товаров</a></li>
+                        <li><a href="faq.html">Частые вопросы</a></li>
+                        <li><a href="instructions.html">Инструкции к препаратам</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Сервисы CBI</h3>
+                    <ul>
+                        <li><a href="consultation.html">Онлайн-консультация фармацевта</a></li>
+                        <li><a href="order-medicine.html">Заказ редких препаратов</a></li>
+                        <li><a href="personal-medkit.html">Персональная аптечка</a></li>
+                        <li><a href="health-calendar.html">Календарь здоровья и вебинары</a></li>
+                        <li><a href="stores.html">Поиск аптек CBI</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Контакты</h3>
+                    <p><strong>Горячая линия:</strong> 8-800-555-00-00</p>
+                    <p><strong>Для юридических лиц:</strong> 8-800-555-00-01</p>
+                    <p><strong>Email:</strong> info@cbi-pharmacy.ru</p>
+                    <p><strong>График работы колл-центра:</strong> круглосуточно</p>
+                    <a href="stores.html" class="btn-stores">📍 Найти ближайшую аптеку</a>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+              <div class="payment-methods">
+                    <span>Мы принимаем:</span>
+                    <span>💳 МИР</span>
+                    <span>💳 СБП</span>
+                    <span>💳 Тинькофф</span>
+                    <span>📱 Sber pay</span>
+                    <span>📱 Yandex pay</span>
+                    <span>💳 ВТБ</span>
+                </div>
+                <div class="legal">
+                    <p>© 1995-2026 Сеть аптек CBI. Все права защищены.</p>
+                    <p>
+                        <a href="privacy.html">Политика конфиденциальности</a> | 
+                        <a href="license.html">Лицензии и сертификаты</a> | 
+                        <a href="sitemap.html">Карта сайта</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Виджет поддержки (основной) -->
+<div class="support-widget">
+  <div class="support-toggle">
+    <span>💬</span>
+    <span class="pulse-dot"></span>
+  </div>
+  <div class="support-content">
+    <div class="support-header">
+      <h3>Поддержка CBI</h3>
+      <button class="close-support">×</button>
+    </div>
+    <div class="support-body">
+      <div class="support-options">
+        <button class="support-option">
+          <span>📞</span>
+          <div>
+            <h4>Позвонить нам</h4>
+            <p>8-800-555-00-00 (круглосуточно)</p>
+          </div>
+        </button>
+        <button class="support-option">
+          <span>✉️</span>
+          <div>
+            <h4>Написать email</h4>
+            <p>Ответ в течение 2 часов</p>
+          </div>
+        </button>
+        <button class="support-option chat-trigger">
+          <span>💬</span>
+          <div>
+            <h4>Онлайн-чат</h4>
+            <p>Быстрые ответы на вопросы</p>
+          </div>
+        </button>
+        <button class="support-option">
+          <span>👨‍⚕️</span>
+          <div>
+            <h4>Консультация фармацевта</h4>
+            <p>Помощь в подборе препаратов</p>
+          </div>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Виджет чата ИИ (отдельный, изначально скрыт) -->
+<div id="ai-chat-widget" class="ai-chat-widget">
+  <div class="chat-header">
+    <h3>Текстовый помощник ИИ</h3>
+    <button class="close-chat">×</button>
+  </div>
+  <div class="chat-messages">
+    <div class="message bot">Здравствуйте! Я текстовый помощник ИИ CBI. Чем могу помочь?</div>
+  </div>
+  <div class="chat-input">
+    <input type="text" placeholder="Задайте вопрос про аптеку...">
+    <button>Отправить</button>
+  </div>
+</div>
+
+  
+<script src="AI.js"></script>
+</body>
+</html>

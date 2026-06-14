@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Онлайн-консультация фармацевта - Аптека CBI</title>
+    <link rel="stylesheet" href="AI.css">
+    <link rel="stylesheet" href="cssmain.css">
+    <link rel="stylesheet" href="cssconsultation.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap">
+    <link rel="icon" href="images/logo/cbi-logo.png" type="image/x-icon">
+</head>
+<body>
+    <!-- Шапка (как в index.html) -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+               <img src="7ea79be2f1a11f1b7e21e89f93961fd_2.png" width="200" height="200" alt="CBI Аптека">
+                <div class="logo-text">
+                    <h1>CBI Pharmacy</h1>
+                    <p>Ваше здоровье в приоритете</p>
+                </div>
+            </div>
+            <div class="header-controls">
+                <div class="contact-info">
+                    <p>Горячая линия: +7(800)555-00-00</p>
+                    <p>24/7 поддержка</p>
+                </div>
+                <div class="user-menu">
+                    <a href="personal-cabinet.html" class="btn-login">
+                        <span>👤</span>
+                        Вход
+                    </a>
+                    <a href="#" class="cart-icon">
+                        <span>🛒</span>
+                        <span class="cart-count">0</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Навигация (как в index.html) -->
+    <nav class="main-nav">
+        <div class="container">
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li>
+                    <a href="catalog.html">Каталог товаров</a>
+                    <ul class="submenu">
+                        <li><a href="catalog.html?category=medicines">Лекарства</a></li>
+                        <li><a href="catalog.html?category=vitamins">Витамины и БАДы</a></li>
+                        <li><a href="catalog.html?category=cosmetics">Косметика</a></li>
+                        <li><a href="catalog.html?category=children">Детские товары</a></li>
+                        <li><a href="catalog.html?category=medical">Медицинские изделия</a></li>
+                    </ul>
+                </li>
+                <li><a href="news.html">Новости и акции</a></li>
+                <li><a href="encyclopedia.html">Энциклопедия здоровья</a></li>
+                <li><a href="community.html">Сообщество CBI</a></li>
+                <li>
+                    <a href="services.html" class="active">Сервисы</a>
+                    <ul class="submenu">
+                        <li><a href="order-medicine.html">Запрос лекарств</a></li>
+                        <li><a href="consultation.html">Консультация фармацевта</a></li>
+                        <li><a href="personal-medkit.html">Персональная аптечка</a></li>
+                        <li><a href="loyalty.html">Программа лояльности</a></li>
+                    </ul>
+                </li>
+                <li><a href="about.html">О сети CBI</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Основное содержимое консультации -->
+    <main>
+        <div class="container">
+            <!-- Заголовок -->
+            <div class="consultation-header">
+                <h1>Онлайн-консультация фармацевта</h1>
+                <p>Получите профессиональную консультацию от сертифицированных фармацевтов CBI. Помощь в подборе препаратов, ответы на вопросы о лекарствах.</p>
+            </div>
+
+            <!-- Формы консультации -->
+            <section class="consultation-forms">
+                <!-- Быстрая консультация -->
+                <div class="consultation-form">
+                    <h3>Быстрая консультация</h3>
+                    <form>
+                        <div class="form-group">
+                            <label for="quick-question">Ваш вопрос *</label>
+                            <textarea id="quick-question" placeholder="Опишите вашу проблему или вопрос о препарате..." required></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="quick-category">Категория вопроса</label>
+                            <select id="quick-category">
+                                <option value="">Выберите категорию</option>
+                                <option value="medicines">Лекарства</option>
+                                <option value="vitamins">Витамины и БАДы</option>
+                                <option value="children">Детские препараты</option>
+                                <option value="cosmetics">Косметика</option>
+                                <option value="interaction">Взаимодействие препаратов</option>
+                                <option value="side-effects">Побочные эффекты</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="quick-phone">Телефон для связи</label>
+                            <input type="tel" id="quick-phone" placeholder="+7 (999) 123-45-67">
+                        </div>
+                        
+                        <button type="submit" class="btn-consult">Отправить вопрос</button>
+                    </form>
+                    <p class="response-time">Ответ в течение 30 минут</p>
+                </div>
+
+                <!-- Подробная консультация -->
+                <div class="consultation-form">
+                    <h3>Подробная консультация</h3>
+                    <form>
+                        <div class="form-group">
+                            <label for="detailed-question">Описание ситуации *</label>
+                            <textarea id="detailed-question" placeholder="Подробно опишите симптомы, принимаемые препараты, диагноз..." required></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="age">Возраст пациента</label>
+                            <input type="number" id="age" placeholder="Лет" min="0" max="120">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="current-meds">Принимаемые препараты</label>
+                            <textarea id="current-meds" placeholder="Укажите названия, дозировки, как давно принимаете..."></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="allergies">Аллергии и противопоказания</label>
+                            <textarea id="allergies" placeholder="Известные аллергические реакции, хронические заболевания..."></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="consult-phone">Контактный телефон *</label>
+                            <input type="tel" id="consult-phone" placeholder="+7 (999) 123-45-67" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="consult-email">Email для ответа</label>
+                            <input type="email" id="consult-email" placeholder="example@mail.ru">
+                        </div>
+                        
+                        <button type="submit" class="btn-consult">Заказать консультацию</button>
+                    </form>
+                    <p class="response-time">Ответ в течение 2 часов с подробными рекомендациями</p>
+                </div>
+            </section>
+
+            <!-- Наши фармацевты -->
+            <section class="pharmacists-section">
+                <h2 class="section-header">Наши специалисты</h2>
+                <p class="section-subtitle">Сертифицированные фармацевты с высшим образованием и опытом работы от 5 лет</p>
+                
+                <div class="pharmacists-grid">
+                    <!-- Фармацевт 1 -->
+                    <div class="pharmacist-card">
+                        <div class="pharmacist-avatar">ИА</div>
+                        <div class="pharmacist-info">
+                            <h4>Иванова Анна Петровна</h4>
+                            <span class="pharmacist-specialty">Клинический фармацевт</span>
+                            <div class="pharmacist-stats">
+                                <div class="stat">
+                                    <div class="stat-value">12 лет</div>
+                                    <div class="stat-label">Опыт работы</div>
+                                </div>
+                                <div class="stat">
+                                    <div class="stat-value">4,850</div>
+                                    <div class="stat-label">Консультаций</div>
+                                </div>
+                            </div>
+                            <div class="pharmacist-rating">★★★★★</div>
+                            <p class="specialization"><strong>Специализация:</strong> Кардиология, антибиотикотерапия, взаимодействие препаратов</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Фармацевт 2 -->
+                    <div class="pharmacist-card">
+                        <div class="pharmacist-avatar">ПВ</div>
+                        <div class="pharmacist-info">
+                            <h4>Петров Владимир Иванович</h4>
+                            <span class="pharmacist-specialty">Педиатрический фармацевт</span>
+                            <div class="pharmacist-stats">
+                                <div class="stat">
+                                    <div class="stat-value">8 лет</div>
+                                    <div class="stat-label">Опыт работы</div>
+                                </div>
+                                <div class="stat">
+                                    <div class="stat-value">3,210</div>
+                                    <div class="stat-label">Консультаций</div>
+                                </div>
+                            </div>
+                            <div class="pharmacist-rating">★★★★★</div>
+                            <p class="specialization"><strong>Специализация:</strong> Детские препараты, вакцинация, профилактика</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Фармацевт 3 -->
+                    <div class="pharmacist-card">
+                        <div class="pharmacist-avatar">СК</div>
+                        <div class="pharmacist-info">
+                            <h4>Сидорова Екатерина Константиновна</h4>
+                            <span class="pharmacist-specialty">Фармацевт-нутрициолог</span>
+                            <div class="pharmacist-stats">
+                                <div class="stat">
+                                    <div class="stat-value">6 лет</div>
+                                    <div class="stat-label">Опыт работы</div>
+                                </div>
+                                <div class="stat">
+                                    <div class="stat-value">2,950</div>
+                                    <div class="stat-label">Консультаций</div>
+                                </div>
+                            </div>
+                            <div class="pharmacist-rating">★★★★☆</div>
+                            <p class="specialization"><strong>Специализация:</strong> Витамины, БАДы, спортивное питание, диетология</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Фармацевт 4 -->
+                    <div class="pharmacist-card">
+                        <div class="pharmacist-avatar">МО</div>
+                        <div class="pharmacist-info">
+                            <h4>Михайлова Ольга Сергеевна</h4>
+                            <span class="pharmacist-specialty">Гериатрический фармацевт</span>
+                            <div class="pharmacist-stats">
+                                <div class="stat">
+                                    <div class="stat-value">15 лет</div>
+                                    <div class="stat-label">Опыт работы</div>
+                                </div>
+                                <div class="stat">
+                                    <div class="stat-value">5,620</div>
+                                    <div class="stat-label">Консультаций</div>
+                                </div>
+                            </div>
+                            <div class="pharmacist-rating">★★★★★</div>
+                            <p class="specialization"><strong>Специализация:</strong> Препараты для пожилых, полипрагмазия, хронические заболевания</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Онлайн-чат (демо) -->
+            <section class="chat-section">
+                <h2 class="section-header">Быстрый онлайн-чат</h2>
+                <p class="section-subtitle">Задайте вопрос в реальном времени (демо-режим)</p>
+                
+                <div class="chat-container">
+                    <div class="chat-messages">
+                        <div class="message bot">
+                            <div class="message-content">
+                                Здравствуйте! Я виртуальный помощник аптеки CBI. Чем могу помочь?
+                            </div>
+                            <div class="message-time">10:00</div>
+                        </div>
+                        
+                        <div class="message user">
+                            <div class="message-content">
+                                Здравствуйте! Подскажите, какие препараты от аллергии лучше принимать весной?
+                            </div>
+                            <div class="message-time">10:01</div>
+                        </div>
+                        
+                        <div class="message bot">
+                            <div class="message-content">
+                                Для весенней аллергии рекомендую антигистаминные препараты нового поколения: Цетиризин, Лоратадин, Фексофенадин. Они не вызывают сонливости. Конкретный препарат подбирается индивидуально.
+                            </div>
+                            <div class="message-time">10:02</div>
+                        </div>
+                    </div>
+                    
+                    <div class="chat-input-area">
+                        <input type="text" placeholder="Введите ваш вопрос...">
+                        <button>➤</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Расписание консультаций -->
+            <section class="schedule-section">
+                <h2 class="section-header">Расписание дежурных фармацевтов</h2>
+                
+                <div class="schedule-table">
+                    <div class="schedule-row header">
+                        <div class="time-slot">Время</div>
+                        <div class="pharmacist-name">Дежурный фармацевт</div>
+                        <div class="availability">Статус</div>
+                    </div>
+                    
+                    <div class="schedule-row">
+                        <div class="time-slot">09:00 - 12:00</div>
+                        <div class="pharmacist-name">Иванова А.П. (клинический фармацевт)</div>
+                        <div class="availability available">Свободен</div>
+                    </div>
+                    
+                    <div class="schedule-row">
+                        <div class="time-slot">12:00 - 15:00</div>
+                        <div class="pharmacist-name">Петров В.И. (педиатрический фармацевт)</div>
+                        <div class="availability busy">Занят</div>
+                    </div>
+                    
+                    <div class="schedule-row">
+                        <div class="time-slot">15:00 - 18:00</div>
+                        <div class="pharmacist-name">Сидорова Е.К. (нутрициолог)</div>
+                        <div class="availability available">Свободен</div>
+                    </div>
+                    
+                    <div class="schedule-row">
+                        <div class="time-slot">18:00 - 21:00</div>
+                        <div class="pharmacist-name">Михайлова О.С. (гериатрический фармацевт)</div>
+                        <div class="availability available">Свободен</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FAQ -->
+            <section class="consultation-faq">
+                <h2 class="section-header">Частые вопросы о консультациях</h2>
+                
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <h4>Консультация фармацевта заменяет визит к врачу?</h4>
+                        <p>Нет, консультация фармацевта не заменяет медицинскую консультацию врача. Мы помогаем с подбором безрецептурных препаратов, объясняем правила приема лекарств, но не ставим диагнозы и не назначаем лечение.</p>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h4>Сколько стоит консультация?</h4>
+                        <p>Базовая консультация бесплатна для всех клиентов CBI. Для участников программы CBI Premium доступны расширенные консультации и приоритетное обслуживание.</p>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h4>Как быстро отвечают на вопросы?</h4>
+                        <p>На быстрые вопросы в онлайн-чате отвечаем в течение 5-10 минут. Письменные консультации - в течение 30 минут. Подробные консультации с изучением истории - до 2 часов.</p>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h4>Можно ли получить консультацию по рецептурным препаратам?</h4>
+                        <p>Да, мы консультируем по рецептурным препаратам, но только в рамках объяснения инструкции, побочных эффектов и взаимодействия с другими лекарствами. Назначение рецептурных препаратов - прерогатива врача.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Преимущества -->
+            <section class="benefits-consultation">
+                <h2 class="section-header">Почему выбирают консультации CBI</h2>
+                
+                <div class="benefits-grid">
+                    <div class="benefit-item">
+                        <span class="benefit-icon">🎓</span>
+                        <h4>Квалифицированные специалисты</h4>
+                        <p>Все фармацевты имеют высшее образование и регулярно проходят повышение квалификации</p>
+                    </div>
+                    
+                    <div class="benefit-item">
+                        <span class="benefit-icon">⚡</span>
+                        <h4>Быстрые ответы</h4>
+                        <p>Среднее время ответа - 15 минут. Онлайн-чат доступен круглосуточно</p>
+                    </div>
+                    
+                    <div class="benefit-item">
+                        <span class="benefit-icon">🤝</span>
+                        <h4>Индивидуальный подход</h4>
+                        <p>Учитываем возраст, хронические заболевания и принимаемые препараты</p>
+                    </div>
+                    
+                    <div class="benefit-item">
+                        <span class="benefit-icon">📱</span>
+                        <h4>Удобные форматы</h4>
+                        <p>Онлайн-чат, телефон, email, видео-консультации</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Футер (как в index.html) -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>Аптека CBI</h3>
+                    <p>Сеть современных аптек, где здоровье клиентов - наш главный приоритет. Работаем с 1995 года.</p>
+                    <div class="social-links">
+                        <a href="#" title="ВКонтакте"><img src="i (2) (1).png" width="30" height="30" alt="CBI Аптека"></a>
+                        <a href="#" title="MAX"><img src="fotor_2026-04-03_09-42-40 (1) (1).png" width="30" height="30" alt="CBI Аптека"></a>
+                        <a href="#" title="VK Video"><img src="VK_Video.svg (1).png" width="30" height="30" alt="CBI Аптека"></a>
+                        <a href="#" title="Rutube"><img src="620x530-2 (1).png" width="30" height="30" alt="CBI Аптека"></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Клиентам</h3>
+                    <ul>
+                        <li><a href="loyalty.html">Программа лояльности CBI Premium</a></li>
+                        <li><a href="delivery.html">Доставка и оплата</a></li>
+                        <li><a href="return.html">Возврат товаров</a></li>
+                        <li><a href="faq.html">Частые вопросы</a></li>
+                        <li><a href="instructions.html">Инструкции к препаратам</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Сервисы CBI</h3>
+                    <ul>
+                        <li><a href="consultation.html">Онлайн-консультация фармацевта</a></li>
+                        <li><a href="order-medicine.html">Заказ редких препаратов</a></li>
+                        <li><a href="personal-medkit.html">Персональная аптечка</a></li>
+                        <li><a href="health-calendar.html">Календарь здоровья и вебинары</a></li>
+                        <li><a href="stores.html">Поиск аптек CBI</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Контакты</h3>
+                    <p><strong>Горячая линия:</strong> 8-800-555-00-00</p>
+                    <p><strong>Для юридических лиц:</strong> 8-800-555-00-01</p>
+                    <p><strong>Email:</strong> info@cbi-pharmacy.ru</p>
+                    <p><strong>График работы колл-центра:</strong> круглосуточно</p>
+                    <a href="stores.html" class="btn-stores">📍 Найти ближайшую аптеку</a>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="payment-methods">
+                    <span>Мы принимаем:</span>
+                    <span>💳 МИР</span>
+                    <span>💳 СБП</span>
+                    <span>💳 Тинькофф</span>
+                    <span>📱 Sber pay</span>
+                    <span>📱 Yandex pay</span>
+                    <span>💳 ВТБ</span>
+                </div>
+                <div class="legal">
+                    <p>© 1995-2026 Сеть аптек CBI. Все права защищены.</p>
+                    <p>
+                        <a href="privacy.html">Политика конфиденциальности</a> | 
+                        <a href="license.html">Лицензии и сертификаты</a> | 
+                        <a href="sitemap.html">Карта сайта</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+   <!-- Виджет поддержки (основной) -->
+<div class="support-widget">
+  <div class="support-toggle">
+    <span>💬</span>
+    <span class="pulse-dot"></span>
+  </div>
+  <div class="support-content">
+    <div class="support-header">
+      <h3>Поддержка CBI</h3>
+      <button class="close-support">×</button>
+    </div>
+    <div class="support-body">
+      <div class="support-options">
+        <button class="support-option">
+          <span>📞</span>
+          <div>
+            <h4>Позвонить нам</h4>
+            <p>8-800-555-00-00 (круглосуточно)</p>
+          </div>
+        </button>
+        <button class="support-option">
+          <span>✉️</span>
+          <div>
+            <h4>Написать email</h4>
+            <p>Ответ в течение 2 часов</p>
+          </div>
+        </button>
+        <button class="support-option chat-trigger">
+          <span>💬</span>
+          <div>
+            <h4>Онлайн-чат</h4>
+            <p>Быстрые ответы на вопросы</p>
+          </div>
+        </button>
+        <button class="support-option">
+          <span>👨‍⚕️</span>
+          <div>
+            <h4>Консультация фармацевта</h4>
+            <p>Помощь в подборе препаратов</p>
+          </div>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Виджет чата ИИ (отдельный, изначально скрыт) -->
+<div id="ai-chat-widget" class="ai-chat-widget">
+  <div class="chat-header">
+    <h3>Текстовый помощник ИИ</h3>
+    <button class="close-chat">×</button>
+  </div>
+  <div class="chat-messages">
+    <div class="message bot">Здравствуйте! Я текстовый помощник ИИ CBI. Чем могу помочь?</div>
+  </div>
+  <div class="chat-input">
+    <input type="text" placeholder="Задайте вопрос про аптеку...">
+    <button>Отправить</button>
+  </div>
+</div>
+
+  
+<script src="AI.js"></script>
+</body>
+</html>

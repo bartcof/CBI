@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Запрос лекарств - Аптека CBI</title>
+    <link rel="stylesheet" href="AI.css">
+    <link rel="stylesheet" href="cssmain.css">
+    <link rel="stylesheet" href="cssorder-medicine.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap">
+    <link rel="icon" href="images/logo/cbi-logo.png" type="image/x-icon">
+</head>
+<body>
+    <!-- Шапка  -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+               <img src="7ea79be2f1a11f1b7e21e89f93961fd_2.png" width="200" height="200" alt="CBI Аптека">
+                <div class="logo-text">
+                    <h1>CBI Pharmacy</h1>
+                    <p>Ваше здоровье в приоритете</p>
+                </div>
+            </div>
+            <div class="header-controls">
+                <div class="contact-info">
+                    <p>Горячая линия: +7(800)555-00-00</p>
+                    <p>24/7 поддержка</p>
+                </div>
+                <div class="user-menu">
+                    <a href="personal-cabinet.html" class="btn-login">
+                        <span>👤</span>
+                        Вход
+                    </a>
+                    <a href="#" class="cart-icon">
+                        <span>🛒</span>
+                        <span class="cart-count">0</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Навигация  -->
+    <nav class="main-nav">
+        <div class="container">
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li>
+                    <a href="catalog.html">Каталог товаров</a>
+                    <ul class="submenu">
+                        <li><a href="catalog.html?category=medicines">Лекарства</a></li>
+                        <li><a href="catalog.html?category=vitamins">Витамины и БАДы</a></li>
+                        <li><a href="catalog.html?category=cosmetics">Косметика</a></li>
+                        <li><a href="catalog.html?category=children">Детские товары</a></li>
+                        <li><a href="catalog.html?category=medical">Медицинские изделия</a></li>
+                    </ul>
+                </li>
+                <li><a href="news.html">Новости и акции</a></li>
+                <li><a href="encyclopedia.html">Энциклопедия здоровья</a></li>
+                <li><a href="community.html">Сообщество CBI</a></li>
+                <li>
+                    <a href="services.html" class="active">Сервисы</a>
+                    <ul class="submenu">
+                        <li><a href="order-medicine.html">Запрос лекарств</a></li>
+                        <li><a href="consultation.html">Консультация фармацевта</a></li>
+                        <li><a href="personal-medkit.html">Персональная аптечка</a></li>
+                        <li><a href="loyalty.html">Программа лояльности</a></li>
+                    </ul>
+                </li>
+                <li><a href="about.html">О сети CBI</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Основное содержимое запроса лекарств -->
+    <main>
+        <div class="container">
+            <!-- Заголовок -->
+            <div class="order-header">
+                <h1>Запрос редких и отсутствующих лекарств</h1>
+                <p>Не нашли нужный препарат? Мы найдем его для вас в течение 24 часов по всей России и за рубежом.</p>
+            </div>
+
+            <!-- Статистика -->
+            <div class="request-stats">
+                <div class="stat-card">
+                    <div class="stat-value">94%</div>
+                    <div class="stat-label">Успешных поисков</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">24 ч</div>
+                    <div class="stat-label">Среднее время поиска</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">15,000+</div>
+                    <div class="stat-label">Найдено препаратов</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">0 ₽</div>
+                    <div class="stat-label">Предоплата за поиск</div>
+                </div>
+            </div>
+
+            <!-- Форма запроса -->
+            <section class="request-form-container">
+                <div class="form-steps">
+                    <div class="step-indicator active">
+                        <div class="step-number">1</div>
+                        <div class="step-label">Информация о лекарстве</div>
+                    </div>
+                    <div class="step-indicator">
+                        <div class="step-number">2</div>
+                        <div class="step-label">Контактные данные</div>
+                    </div>
+                    <div class="step-indicator">
+                        <div class="step-number">3</div>
+                        <div class="step-label">Подтверждение</div>
+                    </div>
+                </div>
+
+                <!-- Шаг 1 -->
+                <form class="form-step active" id="step1">
+                    <div class="form-row">
+                        <label for="medicineName">Название лекарства *</label>
+                        <div class="medicine-search">
+                            <input type="text" id="medicineName" placeholder="Введите торговое или международное название" required>
+                            <div class="search-suggestions">
+                                <div class="suggestion-item">Амброксол 30 мг таблетки</div>
+                                <div class="suggestion-item">Амоксиклав 875+125 мг</div>
+                                <div class="suggestion-item">Азитромицин 500 мг капсулы</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <label for="manufacturer">Производитель (если известно)</label>
+                        <input type="text" id="manufacturer" placeholder="Например: Pfizer, Novartis, Фармстандарт">
+                    </div>
+
+                    <div class="form-row">
+                        <label for="dosage">Дозировка и форма выпуска</label>
+                        <input type="text" id="dosage" placeholder="Например: 500 мг, таблетки, 30 шт.">
+                    </div>
+
+                    <div class="form-row">
+                        <label for="quantity">Необходимое количество</label>
+                        <input type="number" id="quantity" placeholder="Например: 2 упаковки" min="1">
+                    </div>
+
+                    <div class="form-row">
+                        <label for="urgency">Срочность поиска</label>
+                        <select id="urgency">
+                            <option value="normal">В течение недели (обычный)</option>
+                            <option value="urgent">В течение 48 часов (срочный)</option>
+                            <option value="emergency">В течение 24 часов (экстренный)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-row">
+                        <label for="notes">Дополнительная информация</label>
+                        <textarea id="notes" rows="4" placeholder="Рецепт врача, особые условия хранения, аналоги и т.д."></textarea>
+                    </div>
+                </form>
+
+                <!-- Шаг 2 -->
+                <form class="form-step" id="step2" style="display: none;">
+                    <div class="form-row">
+                        <label for="fullName">ФИО *</label>
+                        <input type="text" id="fullName" placeholder="Иванов Иван Иванович" required>
+                    </div>
+
+                    <div class="form-row">
+                        <label for="phone">Телефон *</label>
+                        <input type="tel" id="phone" placeholder="+7 (999) 123-45-67" required>
+                    </div>
+
+                    <div class="form-row">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" placeholder="example@mail.ru" required>
+                    </div>
+
+                    <div class="form-row">
+                        <label for="city">Город получения</label>
+                        <input type="text" id="city" placeholder="Например: Москва">
+                    </div>
+
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="subscribe" checked>
+                        <label for="subscribe">Уведомлять о статусе поиска по SMS и email</label>
+                    </div>
+
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="agreeTerms" required>
+                        <label for="agreeTerms">Я согласен с условиями поиска лекарств</label>
+                    </div>
+                </form>
+
+                <!-- Шаг 3 -->
+                <form class="form-step" id="step3" style="display: none;">
+                    <div class="summary-card">
+                        <h3>Ваш запрос</h3>
+                        <div class="summary-item">
+                            <strong>Лекарство:</strong>
+                            <span id="summary-medicine">-</span>
+                        </div>
+                        <div class="summary-item">
+                            <strong>Производитель:</strong>
+                            <span id="summary-manufacturer">-</span>
+                        </div>
+                        <div class="summary-item">
+                            <strong>Количество:</strong>
+                            <span id="summary-quantity">-</span>
+                        </div>
+                        <div class="summary-item">
+                            <strong>Срочность:</strong>
+                            <span id="summary-urgency">-</span>
+                        </div>
+                        <div class="summary-item">
+                            <strong>Контактное лицо:</strong>
+                            <span id="summary-name">-</span>
+                        </div>
+                        <div class="summary-item">
+                            <strong>Телефон:</strong>
+                            <span id="summary-phone">-</span>
+                        </div>
+                    </div>
+
+                    <div class="price-estimate">
+                        <h4>Ориентировочная стоимость услуги:</h4>
+                        <div class="price-amount">Бесплатно</div>
+                        <p class="price-note">Оплачивается только стоимость найденного препарата</p>
+                    </div>
+                </form>
+
+                <!-- Навигация формы -->
+                <div class="form-navigation">
+                    <button type="button" class="btn-prev" id="btnPrev" style="display: none;">
+                        ← Назад
+                    </button>
+                    <button type="button" class="btn-next" id="btnNext">
+                        Далее →
+                    </button>
+                    <button type="submit" class="btn-submit" id="btnSubmit" style="display: none;">
+                        Отправить запрос
+                    </button>
+                </div>
+            </section>
+
+            <!-- Примеры успешных запросов -->
+            <section class="examples-section">
+                <h2 class="section-header">Недавно найденные препараты</h2>
+                <p class="section-subtitle">Примеры успешных поисков за последнюю неделю</p>
+                
+                <div class="examples-grid">
+                    <div class="example-card">
+                        <h4>Редкий препарат от мигрени</h4>
+                        <p><strong>Препарат:</strong> Эренумаб 140 мг</p>
+                        <p><strong>Найден за:</strong> 18 часов</p>
+                        <p><strong>Стоимость:</strong> 15,800 ₽</p>
+                        <span class="example-status status-found">Найден</span>
+                    </div>
+                    
+                    <div class="example-card">
+                        <h4>Детский антибиотик</h4>
+                        <p><strong>Препарат:</strong> Супракс суспензия 100 мг/5 мл</p>
+                        <p><strong>Найден за:</strong> 6 часов</p>
+                        <p><strong>Стоимость:</strong> 890 ₽</p>
+                        <span class="example-status status-found">Найден</span>
+                    </div>
+                    
+                    <div class="example-card">
+                        <h4>Онкологический препарат</h4>
+                        <p><strong>Препарат:</strong> Пембролизумаб 100 мг</p>
+                        <p><strong>Статус:</strong> Поиск по России</p>
+                        <p><strong>Срок:</strong> 3-5 дней</p>
+                        <span class="example-status status-searching">В поиске</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Процесс обработки -->
+            <section class="process-steps">
+                <h2 class="section-header">Как работает поиск лекарств</h2>
+                
+                <div class="process-grid">
+                    <div class="process-step">
+                        <div class="process-icon">📝</div>
+                        <h4>Запрос</h4>
+                        <p>Вы оставляете заявку с информацией о нужном препарате</p>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="process-icon">🔍</div>
+                        <h4>Поиск</h4>
+                        <p>Мы ищем препарат в базе 200+ аптек CBI и у партнеров</p>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="process-icon">📞</div>
+                        <h4>Уведомление</h4>
+                        <p>Информируем вас о результате в течение 24 часов</p>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="process-icon">🚚</div>
+                        <h4>Доставка</h4>
+                        <p>Доставляем препарат в удобную для вас аптеку CBI</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Гарантии -->
+            <section class="guarantees-section">
+                <h2 class="section-header">Наши гарантии</h2>
+                
+                <div class="guarantees-grid">
+                    <div class="guarantee-card">
+                        <span class="guarantee-icon">💰</span>
+                        <h4>Бесплатный поиск</h4>
+                        <p>Не берем предоплату за поиск. Оплачиваете только стоимость найденного препарата.</p>
+                    </div>
+                    
+                    <div class="guarantee-card">
+                        <span class="guarantee-icon">✅</span>
+                        <h4>Гарантия подлинности</h4>
+                        <p>Все препараты имеют сертификаты качества и хранятся с соблюдением норм.</p>
+                    </div>
+                    
+                    <div class="guarantee-card">
+                        <span class="guarantee-icon">🔒</span>
+                        <h4>Конфиденциальность</h4>
+                        <p>Информация о вашем запросе и диагнозе защищена врачебной тайной.</p>
+                    </div>
+                    
+                    <div class="guarantee-card">
+                        <span class="guarantee-icon">🔄</span>
+                        <h4>Возврат средств</h4>
+                        <p>Если препарат не подошел, возможен возврат в течение 14 дней.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Футер (как в index.html) -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>Аптека CBI</h3>
+                    <p>Сеть современных аптек, где здоровье клиентов - наш главный приоритет. Работаем с 1995 года.</p>
+                  <div class="social-links">
+                        <a href="#" title="ВКонтакте"><img src="i (2) (1).png" width="30" height="30" alt="CBI Аптека"></a>
+                        <a href="#" title="MAX"><img src="fotor_2026-04-03_09-42-40 (1) (1).png" width="30" height="30" alt="CBI Аптека"></a>
+                        <a href="#" title="VK Video"><img src="VK_Video.svg (1).png" width="30" height="30" alt="CBI Аптека"></a>
+                        <a href="#" title="Rutube"><img src="620x530-2 (1).png" width="30" height="30" alt="CBI Аптека"></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Клиентам</h3>
+                    <ul>
+                        <li><a href="loyalty.html">Программа лояльности CBI Premium</a></li>
+                        <li><a href="delivery.html">Доставка и оплата</a></li>
+                        <li><a href="return.html">Возврат товаров</a></li>
+                        <li><a href="faq.html">Частые вопросы</a></li>
+                        <li><a href="instructions.html">Инструкции к препаратам</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Сервисы CBI</h3>
+                    <ul>
+                        <li><a href="consultation.html">Онлайн-консультация фармацевта</a></li>
+                        <li><a href="order-medicine.html">Заказ редких препаратов</a></li>
+                        <li><a href="personal-medkit.html">Персональная аптечка</a></li>
+                        <li><a href="health-calendar.html">Календарь здоровья и вебинары</a></li>
+                        <li><a href="stores.html">Поиск аптек CBI</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Контакты</h3>
+                    <p><strong>Горячая линия:</strong> 8-800-555-00-00</p>
+                    <p><strong>Для юридических лиц:</strong> 8-800-555-00-01</p>
+                    <p><strong>Email:</strong> info@cbi-pharmacy.ru</p>
+                    <p><strong>График работы колл-центра:</strong> круглосуточно</p>
+                    <a href="stores.html" class="btn-stores">📍 Найти ближайшую аптеку</a>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="payment-methods">
+                    <span>Мы принимаем:</span>
+                    <span>💳 МИР</span>
+                    <span>💳 СБП</span>
+                    <span>💳 Тинькофф</span>
+                    <span>📱 Sber pay</span>
+                    <span>📱 Yandex pay</span>
+                    <span>💳 ВТБ</span>
+                </div>
+                <div class="legal">
+                    <p>© 1995-2026 Сеть аптек CBI. Все права защищены.</p>
+                    <p>
+                        <a href="privacy.html">Политика конфиденциальности</a> | 
+                        <a href="license.html">Лицензии и сертификаты</a> | 
+                        <a href="sitemap.html">Карта сайта</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+   <!-- Виджет поддержки (основной) -->
+<div class="support-widget">
+  <div class="support-toggle">
+    <span>💬</span>
+    <span class="pulse-dot"></span>
+  </div>
+  <div class="support-content">
+    <div class="support-header">
+      <h3>Поддержка CBI</h3>
+      <button class="close-support">×</button>
+    </div>
+    <div class="support-body">
+      <div class="support-options">
+        <button class="support-option">
+          <span>📞</span>
+          <div>
+            <h4>Позвонить нам</h4>
+            <p>8-800-555-00-00 (круглосуточно)</p>
+          </div>
+        </button>
+        <button class="support-option">
+          <span>✉️</span>
+          <div>
+            <h4>Написать email</h4>
+            <p>Ответ в течение 2 часов</p>
+          </div>
+        </button>
+        <button class="support-option chat-trigger">
+          <span>💬</span>
+          <div>
+            <h4>Онлайн-чат</h4>
+            <p>Быстрые ответы на вопросы</p>
+          </div>
+        </button>
+        <button class="support-option">
+          <span>👨‍⚕️</span>
+          <div>
+            <h4>Консультация фармацевта</h4>
+            <p>Помощь в подборе препаратов</p>
+          </div>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Виджет чата ИИ (отдельный, изначально скрыт) -->
+<div id="ai-chat-widget" class="ai-chat-widget">
+  <div class="chat-header">
+    <h3>Текстовый помощник ИИ</h3>
+    <button class="close-chat">×</button>
+  </div>
+  <div class="chat-messages">
+    <div class="message bot">Здравствуйте! Я текстовый помощник ИИ CBI. Чем могу помочь?</div>
+  </div>
+  <div class="chat-input">
+    <input type="text" placeholder="Задайте вопрос про аптеку...">
+    <button>Отправить</button>
+  </div>
+</div>
+
+  
+<script src="AI.js"></script>
+</body>
+</html>

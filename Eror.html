@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>CBI Аптека | Ошибка 404 - Доза не найдена</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            user-select: none; /* футуристичный эффект, не мешает */
+        }
+
+        body {
+            min-height: 100vh;
+            background: radial-gradient(circle at 20% 30%, #0a0f1e, #03060c);
+            font-family: 'Share Tech Mono', 'Courier New', monospace;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow-x: hidden;
+            position: relative;
+            cursor: crosshair;
+        }
+
+        /* Эффект сканирующей сетки (кибер-аптека) */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(0, 255, 196, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 255, 196, 0.05) 1px, transparent 1px);
+            background-size: 30px 30px;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        /* мерцающий индикатор угрозы/ошибки */
+        .glitch-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(0deg, rgba(0,255,200,0.02) 0px, rgba(255,0,100,0.02) 2px, transparent 3px);
+            pointer-events: none;
+            z-index: 2;
+            animation: flicker 8s infinite;
+        }
+
+        @keyframes flicker {
+            0% { opacity: 0.3; }
+            5% { opacity: 0.6; }
+            10% { opacity: 0.2; }
+            15% { opacity: 0.7; }
+            100% { opacity: 0.3; }
+        }
+
+        /* главный контейнер */
+        .cyber-container {
+            position: relative;
+            z-index: 10;
+            max-width: 900px;
+            width: 90%;
+            margin: 2rem;
+            background: rgba(8, 18, 28, 0.65);
+            backdrop-filter: blur(12px);
+            border: 1.5px solid #00ffcc;
+            box-shadow: 0 0 25px rgba(0, 255, 200, 0.3), inset 0 0 20px rgba(0,255,200,0.1);
+            border-radius: 32px;
+            padding: 2rem 2rem 3rem;
+            transition: all 0.3s ease;
+        }
+
+        /* анимированный уголок CBI */
+        .cbi-badge {
+            position: absolute;
+            top: -15px;
+            left: 30px;
+            background: #00ffc3;
+            color: #021016;
+            font-weight: bold;
+            font-size: 0.9rem;
+            padding: 6px 18px;
+            border-radius: 40px;
+            letter-spacing: 3px;
+            font-family: 'Orbitron', monospace;
+            box-shadow: 0 0 15px #00ffc3;
+            text-transform: uppercase;
+            z-index: 20;
+        }
+
+        /* главный экран ошибки */
+        .error-screen {
+            text-align: center;
+        }
+
+        .code-block {
+            margin-bottom: 1rem;
+            position: relative;
+        }
+
+        .glitch-text {
+            font-size: 8rem;
+            font-weight: 800;
+            font-family: 'Orbitron', monospace;
+            color: #00ffcc;
+            text-shadow: 0.05em 0 0 rgba(255,0,100,0.7), -0.05em -0.025em 0 rgba(0,200,255,0.7);
+            animation: glitch-shake 0.3s infinite alternate;
+            letter-spacing: -2px;
+        }
+
+        @keyframes glitch-shake {
+            0% { transform: translate(0); text-shadow: 0.03em 0 0 #ff00a6, -0.03em -0.03em 0 #00ffff; }
+            100% { transform: translate(-0.02em, 0.02em); text-shadow: -0.03em 0.02em 0 #ff00a6, 0.04em -0.01em 0 #00ffcc; }
+        }
+
+        .sub-404 {
+            font-size: 1.3rem;
+            background: rgba(0,0,0,0.6);
+            display: inline-block;
+            padding: 0.3rem 1.2rem;
+            border-left: 4px solid #ff3366;
+            color: #ccf7ff;
+            margin-bottom: 25px;
+            letter-spacing: 2px;
+        }
+
+        .pharmacy-pulse {
+            margin: 20px 0;
+            font-family: 'Share Tech Mono', monospace;
+        }
+
+        /* стилизованный таблоид рецепта */
+        .prescription-card {
+            background: #07161f;
+            border-radius: 24px;
+            padding: 20px;
+            margin: 30px 0;
+            border: 1px solid #2affb6;
+            box-shadow: 0 0 12px rgba(0,255,170,0.2);
+            text-align: left;
+            transition: 0.2s;
+        }
+
+        .prescription-header {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px dashed #2affb6;
+            padding-bottom: 8px;
+            margin-bottom: 16px;
+            font-weight: bold;
+            color: #bbffdd;
+        }
+
+        .rx-line {
+            font-family: monospace;
+            background: #010a0f;
+            padding: 8px 12px;
+            margin: 12px 0;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            border-left: 5px solid #ff3366;
+        }
+
+        .rx-label {
+            color: #ff77aa;
+            font-weight: bold;
+            min-width: 100px;
+        }
+
+        .rx-value {
+            color: #b3fff0;
+            word-break: break-all;
+            font-size: 1rem;
+        }
+
+        .error-diagnosis {
+            background: #0c1a22;
+            padding: 12px;
+            border-radius: 20px;
+            margin-top: 15px;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .blink-led {
+            width: 12px;
+            height: 12px;
+            background: #ff3366;
+            border-radius: 50%;
+            box-shadow: 0 0 8px #ff3366;
+            animation: pulseRed 1.2s infinite;
+        }
+
+        @keyframes pulseRed {
+            0% { opacity: 0.3; background: #ff3366; }
+            100% { opacity: 1; background: #ff00a0; box-shadow: 0 0 12px #ff0066; }
+        }
+
+        /* кнопки интерфейса */
+        .cyber-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 35px;
+        }
+
+        .cyber-btn {
+            background: transparent;
+            border: 1.5px solid #2affb6;
+            color: #2affb6;
+            padding: 12px 28px;
+            font-family: 'Orbitron', monospace;
+            font-weight: bold;
+            font-size: 1rem;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: 0.2s;
+            backdrop-filter: blur(4px);
+            border-radius: 60px;
+            letter-spacing: 1.5px;
+        }
+
+        .cyber-btn:hover {
+            background: #2affb6;
+            color: #021016;
+            box-shadow: 0 0 20px #2affb6;
+            transform: scale(1.02);
+            border-color: #ffffff;
+        }
+
+        .cyber-btn.danger {
+            border-color: #ff4d6d;
+            color: #ff7b9c;
+        }
+
+        .cyber-btn.danger:hover {
+            background: #ff4d6d;
+            color: #0a0f1e;
+            box-shadow: 0 0 20px #ff4d6d;
+        }
+
+        /* индикатор дозы / метрики */
+        .dose-meter {
+            background: #00000055;
+            border-radius: 20px;
+            padding: 12px;
+            margin-top: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.8rem;
+            border: 1px solid #22aa88;
+        }
+
+        .bar {
+            width: 60%;
+            height: 8px;
+            background: #1e2a32;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .bar-fill {
+            width: 0%;
+            height: 100%;
+            background: linear-gradient(90deg, #00ffcc, #ff66cc);
+            animation: loadGlitch 2s infinite alternate;
+        }
+
+        @keyframes loadGlitch {
+            0% { width: 12%; background: #ff3366; }
+            100% { width: 42%; background: #00ffcc; }
+        }
+
+        footer {
+            margin-top: 35px;
+            font-size: 0.7rem;
+            text-align: center;
+            color: #43c9b0;
+            opacity: 0.6;
+            border-top: 1px dashed #2affb64d;
+            padding-top: 18px;
+        }
+
+        /* адаптив */
+        @media (max-width: 550px) {
+            .glitch-text {
+                font-size: 3.8rem;
+            }
+            .cyber-container {
+                padding: 1.5rem;
+            }
+            .rx-line {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="glitch-overlay"></div>
+
+<div class="cyber-container">
+    <div class="cbi-badge">⚕️ CBI PHARMACY ⚡ [BIOS-ERROR]</div>
+    <div class="error-screen">
+        <div class="code-block">
+            <div class="glitch-text">404</div>
+        </div>
+        <div class="sub-404">❌ РЕЦЕПТ НЕ НАЙДЕН ❌</div>
+        <div class="pharmacy-pulse">
+            ⚡ ДОЗА НЕ ЗАГРУЖЕНА :: СБОЙ ПРОТОКОЛА ДОСТАВКИ ⚡
+        </div>
+
+        <!-- Карточка медицинской диагностики ошибки -->
+        <div class="prescription-card">
+            <div class="prescription-header">
+                <span>🧪 CBI-DIAGNOSTIC REPORT</span>
+                <span>#ERR-4X4</span>
+            </div>
+            <div class="rx-line">
+                <span class="rx-label">🔬 КОД ОШИБКИ:</span>
+                <span class="rx-value">0x194_404_DRUG_NOT_FOUND</span>
+            </div>
+            <div class="rx-line">
+                <span class="rx-label">💊 ТЕРАПЕВТИЧЕСКАЯ ЗОНА:</span>
+                <span class="rx-value">[НЕДОСТУПНЫЙ КОНТЕНТ] /null</span>
+            </div>
+            <div class="rx-line">
+                <span class="rx-label">⚠️ ДИАГНОЗ:</span>
+                <span class="rx-value">Синдром разорванного канала — запрашиваемая страница отсутствует в нейро-фармакопее.</span>
+            </div>
+            <div class="error-diagnosis">
+                <div class="blink-led"></div>
+                <span>🔁 АВТОМАТИЧЕСКАЯ ПЕРЕЗАГРУЗКА НЕ ВОЗМОЖНА. ТРЕБУЕТСЯ РУЧНОЕ ВМЕШАТЕЛЬСТВО.</span>
+                <div class="blink-led"></div>
+            </div>
+        </div>
+
+        <!-- Индикатор "Уровень дозы" (как загрузка страницы, но сломанная) -->
+        <div class="dose-meter">
+            <span>📡 CBI-СИГНАЛ</span>
+            <div class="bar"><div class="bar-fill"></div></div>
+            <span>⚡ 34% (ГЛИТЧ)</span>
+        </div>
+
+        <!-- Панель действий для "лечения" ошибки -->
+        <div class="cyber-buttons">
+            <button class="cyber-btn" id="retryBtn">💊 ПОВТОРИТЬ ЗАПРОС</button>
+            <button class="cyber-btn danger" id="resetBtn">⚠️ СБРОСИТЬ К ЭКСТРЕННОМУ РЕЦЕПТУ</button>
+            <button class="cyber-btn" id="randomDrugBtn">🧪 НАЙТИ АЛЬТЕРНАТИВУ</button>
+        </div>
+        <footer>
+            [CBI Cyber Pharma Interface v.0x4.0.4] — Ошибка загрузки. Возможно, сервер аптеки временно перегружен или доза была уничтожена корпоративным брандмауэром.
+        </footer>
+    </div>
+</div>
+
+<script>
+    (function() {
+        // креативные сообщения об "альтернативных лекарствах" при клике
+        const alternativeMessages = [
+            "💊 Найден дженерик: 'Плацебо-404' — эффект не гарантирован, но страница всё ещё пуста.",
+            "🧬 Аптека предлагает ретро-версию контента — архив 1984 года. Данные утеряны навсегда.",
+            "⚡ Загрузка через нейро-интерфейс: страница не отвечает. Рекомендуем принять успокоительное и вернуться позже.",
+            "🔮 Рецепт перенаправлен в параллельную реальность. Попробуйте обновить через 3.14 секунды.",
+            "💉 CBI синтезировал капсулу 'Redirectin' — перейдите на главную аптеку во избежание коллапса.",
+            "🚑 Био-ошибка 404: капсула с данными испарилась. Нажмите 'Сброс к рецепту' для возврата в главный хаб."
+        ];
+
+        // Функция для динамического обновления статуса (интерактив)
+        const rxLines = document.querySelectorAll('.rx-value');
+        const diagnoseBlock = document.querySelector('.error-diagnosis span');
+        const dosePercentSpan = document.querySelector('.dose-meter span:last-child');
+        const barFill = document.querySelector('.bar-fill');
+
+        // Эффект "глитч-замена" сообщения диагноза
+        function glitchDiagnosis(tempMessage, duration = 1500) {
+            if (!diagnoseBlock) return;
+            const originalText = diagnoseBlock.innerText;
+            diagnoseBlock.innerText = tempMessage;
+            setTimeout(() => {
+                if (diagnoseBlock) diagnoseBlock.innerText = originalText;
+            }, duration);
+        }
+
+        // Функция имитации попытки загрузки
+        function attemptReload() {
+            // Эффект вибрации на контейнере (киберпанк)
+            const container = document.querySelector('.cyber-container');
+            if (container) {
+                container.style.transform = 'translateX(4px)';
+                setTimeout(() => { if(container) container.style.transform = ''; }, 80);
+                container.style.transform = 'translateX(-3px)';
+                setTimeout(() => { if(container) container.style.transform = ''; }, 150);
+            }
+            // меняем показатели дозы
+            if (barFill) {
+                barFill.style.animation = 'none';
+                barFill.style.width = '0%';
+                setTimeout(() => {
+                    if(barFill) {
+                        barFill.style.animation = 'loadGlitch 1.8s infinite alternate';
+                        barFill.style.width = '';
+                    }
+                }, 50);
+            }
+            if (dosePercentSpan) dosePercentSpan.innerHTML = '⚡ 13% (ПЕРЕЗАГРУЗКА...)';
+            glitchDiagnosis("⟳ ОТПРАВЛЕН ЗАПРОС В ЦЕНТРАЛЬНЫЙ УЗЕЛ CBI... НЕТ ОТВЕТА...", 1200);
+            setTimeout(() => {
+                if (dosePercentSpan) dosePercentSpan.innerHTML = '⚠️ 0% (ОТКАЗ)';
+                glitchDiagnosis("❌ СЕРВЕР АПТЕКИ ВЕРНУЛ 404: ДОЗА НЕ НАЙДЕНА. ПОВТОРНЫЙ ЗАПРОС БЕСПОЛЕЗЕН.", 2000);
+            }, 1300);
+            // дополнительный фейковый сбой
+            setTimeout(() => {
+                const fakeRx = document.querySelector('.rx-line:first-child .rx-value');
+                if (fakeRx) fakeRx.style.textShadow = '0 0 3px red';
+                setTimeout(() => { if(fakeRx) fakeRx.style.textShadow = ''; }, 400);
+            }, 700);
+        }
+
+        // Сброс к "экстренному рецепту" - меняем содержимое карточки на более эпичное
+        function emergencyReset() {
+            const rxBlocks = document.querySelectorAll('.rx-line');
+            if (rxBlocks.length >= 3) {
+                // Эффект затемнения перед сменой текста
+                const prescription = document.querySelector('.prescription-card');
+                prescription.style.transition = '0.2s';
+                prescription.style.opacity = '0.6';
+                setTimeout(() => {
+                    // Изменяем содержимое строк рецепта
+                    const codes = [
+                        {label: "🔬 КОД ОШИБКИ:", value: "0xE404_RESET_TO_BASE"},
+                        {label: "💊 ТЕРАПЕВТИЧЕСКАЯ ЗОНА:", value: "[ГЛАВНАЯ АПТЕКА] /home"},
+                        {label: "⚠️ ДИАГНОЗ:", value: "Экстренное восстановление: перенаправление в корневой каталог CBI."}
+                    ];
+                    for (let i = 0; i < rxBlocks.length && i < codes.length; i++) {
+                        const labelSpan = rxBlocks[i].querySelector('.rx-label');
+                        const valueSpan = rxBlocks[i].querySelector('.rx-value');
+                        if (labelSpan && valueSpan && codes[i]) {
+                            labelSpan.innerText = codes[i].label;
+                            valueSpan.innerText = codes[i].value;
+                        }
+                    }
+                    // меняем дополнительный блок диагностики
+                    if (diagnoseBlock) diagnoseBlock.innerText = "🔄 СБРОС ВЫПОЛНЕН. ПЕРЕНАПРАВЛЕНИЕ НА CBI-ХАБ. ОШИБКА 404 ОСТАЕТСЯ, НО СТАТУС СБРОШЕН.";
+                    prescription.style.opacity = '1';
+                }, 180);
+                setTimeout(() => {
+                    if(dosePercentSpan) dosePercentSpan.innerHTML = '💊 77% (СТАБИЛИЗАЦИЯ)';
+                    if(barFill) barFill.style.width = '77%';
+                }, 500);
+                // также смена глитч текста на мгновение
+                const glitchDiv = document.querySelector('.glitch-text');
+                if(glitchDiv) {
+                    const oldText = glitchDiv.innerText;
+                    glitchDiv.innerText = '⚡⚡⚡';
+                    setTimeout(() => { if(glitchDiv) glitchDiv.innerText = oldText; }, 700);
+                }
+            } else {
+                // fallback
+                window.location.href = "#";
+                glitchDiagnosis("СБРОС НЕ УДАЛСЯ — КРИТИЧЕСКАЯ ОШИБКА, но вы можете перейти на главную вручную", 1500);
+            }
+        }
+
+        // Поиск альтернативы — забавные сообщения и смена статуса
+        function findAlternative() {
+            const randomMsg = alternativeMessages[Math.floor(Math.random() * alternativeMessages.length)];
+            glitchDiagnosis(randomMsg, 2000);
+            // меняем один из rx value на случайный "альтернативный препарат"
+            const targetRx = document.querySelector('.rx-line:nth-child(2) .rx-value');
+            if (targetRx) {
+                const altDrugs = ["'Нейро-пустышка 0.0'", "'Трамадол плацебо'", "'Кибер-витамин C404'", "'Био-адреноблокатор глюк'", "'Фантомная таблетка 4.04'"];
+                const chosen = altDrugs[Math.floor(Math.random() * altDrugs.length)];
+                const original = targetRx.innerText;
+                targetRx.innerText = chosen + " (АЛЬТЕРНАТИВА)";
+                setTimeout(() => {
+                    if (targetRx) targetRx.innerText = original;
+                }, 2800);
+            }
+            // анимация дозиметра
+            if (dosePercentSpan) dosePercentSpan.innerHTML = '🌀 42% (ЭКСПЕРИМЕНТАЛЬНАЯ ДОЗА)';
+            if (barFill) {
+                barFill.style.animation = 'none';
+                barFill.style.width = '42%';
+                setTimeout(() => {
+                    if(barFill) barFill.style.animation = 'loadGlitch 1.5s infinite alternate';
+                }, 300);
+            }
+            // Дополнительно звук? (без звука, но вибрация)
+            const container = document.querySelector('.cyber-container');
+            if (container) {
+                container.style.transform = 'scale(0.99)';
+                setTimeout(() => { if(container) container.style.transform = ''; }, 200);
+            }
+        }
+
+        // Обработчики с веселым киберпанк эффектом
+        const retryBtn = document.getElementById('retryBtn');
+        const resetBtn = document.getElementById('resetBtn');
+        const randomBtn = document.getElementById('randomDrugBtn');
+
+        if (retryBtn) retryBtn.addEventListener('click', attemptReload);
+        if (resetBtn) resetBtn.addEventListener('click', emergencyReset);
+        if (randomBtn) randomBtn.addEventListener('click', findAlternative);
+
+        // Анимируем инициализацию: показать предупреждение о фантомной дозе
+        setTimeout(() => {
+            glitchDiagnosis("⚠️ ВНИМАНИЕ: СИСТЕМА CBI НЕ МОЖЕТ НАЙТИ ЗАПРАШИВАЕМУЮ СТРАНИЦУ. ПРОВЕРЬТЕ ПУТЬ ИЛИ ИСПОЛЬЗУЙТЕ АЛЬТЕРНАТИВУ", 3000);
+        }, 500);
+
+        // Добавим динамическое изменение курсора и кнопок
+        const allBtns = document.querySelectorAll('.cyber-btn');
+        allBtns.forEach(btn => {
+            btn.addEventListener('mousedown', () => {
+                btn.style.transform = 'scale(0.96)';
+                setTimeout(() => { btn.style.transform = ''; }, 120);
+            });
+        });
+
+        // дополнительный "глитч" при наведении на 404
+        const glitchElem = document.querySelector('.glitch-text');
+        if (glitchElem) {
+            glitchElem.addEventListener('mouseenter', () => {
+                glitchElem.style.animation = 'glitch-shake 0.08s infinite';
+                setTimeout(() => { glitchElem.style.animation = 'glitch-shake 0.3s infinite alternate'; }, 400);
+            });
+        }
+    })();
+</script>
+</body>
+</html>

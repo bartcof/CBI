@@ -1,0 +1,455 @@
+
+/* Заголовок энциклопедии */
+.encyclopedia-header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 40px 20px;
+    background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+    border-radius: 15px;
+    border: 1px solid #bae6fd;
+}
+
+.encyclopedia-header h1 {
+    color: #1a5fb4;
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.encyclopedia-header p {
+    font-size: 1.2rem;
+    color: #475569;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Поиск по энциклопедии */
+.encyclopedia-search {
+    margin-bottom: 40px;
+}
+
+.search-container-large {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.search-container-large input {
+    width: 100%;
+    padding: 18px 25px;
+    padding-right: 60px;
+    border: 2px solid #cbd5e1;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    outline: none;
+    transition: all 0.3s;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.search-container-large input:focus {
+    border-color: #1a5fb4;
+    box-shadow: 0 0 0 4px rgba(26, 95, 180, 0.1);
+}
+
+.search-container-large button {
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    background: #1a5fb4;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: background 0.3s;
+}
+
+.search-container-large button:hover {
+    background: #2d7bd4;
+}
+
+/* Категории статей */
+.encyclopedia-categories {
+    margin-bottom: 50px;
+}
+
+.categories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+.category-card {
+    background: white;
+    border-radius: 12px;
+    padding: 30px;
+    text-align: center;
+    border: 2px solid transparent;
+    transition: all 0.3s;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.category-card:hover {
+    transform: translateY(-5px);
+    border-color: #1a5fb4;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.category-icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.category-card h3 {
+    color: #1a5fb4;
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+}
+
+.category-card p {
+    color: #64748b;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+}
+
+.category-count {
+    display: inline-block;
+    background: #f0f9ff;
+    color: #1a5fb4;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+/* Популярные статьи */
+.popular-articles {
+    margin-bottom: 50px;
+}
+
+.articles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+}
+
+.article-card-large {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s;
+}
+
+.article-card-large:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+}
+
+.article-image {
+    height: 200px;
+    background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
+    color: #1a5fb4;
+}
+
+.article-content {
+    padding: 25px;
+}
+
+.article-category {
+    color: #1a5fb4;
+    font-weight: 500;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.article-content h3 {
+    color: #1e293b;
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    line-height: 1.4;
+}
+
+.article-excerpt {
+    color: #64748b;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.article-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #94a3b8;
+    font-size: 0.85rem;
+    padding-top: 15px;
+    border-top: 1px solid #e2e8f0;
+}
+
+.read-article {
+    color: #1a5fb4;
+    text-decoration: none;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.read-article:hover {
+    text-decoration: underline;
+}
+
+/* Детальная статья */
+.article-detail {
+    background: white;
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.05);
+    margin-bottom: 40px;
+}
+
+.article-header {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.article-header h1 {
+    color: #1e293b;
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+    line-height: 1.3;
+}
+
+.article-meta-large {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    color: #64748b;
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+}
+
+.author {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.article-content-large {
+    line-height: 1.8;
+    font-size: 1.05rem;
+    color: #334155;
+}
+
+.article-content-large h2 {
+    color: #1a5fb4;
+    margin: 30px 0 15px;
+    font-size: 1.6rem;
+}
+
+.article-content-large h3 {
+    color: #1e293b;
+    margin: 25px 0 15px;
+    font-size: 1.3rem;
+}
+
+.article-content-large p {
+    margin-bottom: 20px;
+}
+
+.article-content-large ul,
+.article-content-large ol {
+    margin-bottom: 20px;
+    padding-left: 25px;
+}
+
+.article-content-large li {
+    margin-bottom: 10px;
+}
+
+.article-content-large blockquote {
+    border-left: 4px solid #1a5fb4;
+    padding-left: 20px;
+    margin: 25px 0;
+    font-style: italic;
+    color: #475569;
+}
+
+.article-content-large table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 25px 0;
+}
+
+.article-content-large table th,
+.article-content-large table td {
+    padding: 12px 15px;
+    border: 1px solid #e2e8f0;
+    text-align: left;
+}
+
+.article-content-large table th {
+    background: #f1f5f9;
+    color: #1e293b;
+    font-weight: 600;
+}
+
+.article-tags {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #e2e8f0;
+}
+
+.tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.tag {
+    background: #f0f9ff;
+    color: #1a5fb4;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    text-decoration: none;
+}
+
+.tag:hover {
+    background: #1a5fb4;
+    color: white;
+}
+
+/* Калькуляторы здоровья */
+.health-calculators {
+    background: #f8fafc;
+    border-radius: 15px;
+    padding: 40px;
+    margin: 50px 0;
+    border: 1px solid #e2e8f0;
+}
+
+.calculator-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.calculator-tool {
+    background: white;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.calculator-tool h3 {
+    color: #1a5fb4;
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+}
+
+.calculator-input {
+    margin-bottom: 15px;
+}
+
+.calculator-input label {
+    display: block;
+    margin-bottom: 8px;
+    color: #475569;
+    font-weight: 500;
+}
+
+.calculator-input input,
+.calculator-input select {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+.calculator-result {
+    margin-top: 20px;
+    padding: 15px;
+    background: #f0f9ff;
+    border-radius: 8px;
+    text-align: center;
+    display: none;
+}
+
+.calculator-result.active {
+    display: block;
+}
+
+.result-value {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #1a5fb4;
+    margin-bottom: 5px;
+}
+
+.result-label {
+    color: #64748b;
+    font-size: 0.9rem;
+}
+
+/* Адаптивность энциклопедии */
+@media (max-width: 768px) {
+    .encyclopedia-header {
+        padding: 30px 15px;
+    }
+    
+    .encyclopedia-header h1 {
+        font-size: 2rem;
+    }
+    
+    .encyclopedia-header p {
+        font-size: 1rem;
+    }
+    
+    .articles-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .article-detail {
+        padding: 25px 20px;
+    }
+    
+    .article-header h1 {
+        font-size: 1.8rem;
+    }
+    
+    .calculator-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .article-meta-large {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+    
+    .health-calculators {
+        padding: 25px 20px;
+    }
+    
+    .search-container-large input {
+        padding: 15px 20px;
+        font-size: 1rem;
+    }
+    
+    .search-container-large button {
+        padding: 12px 20px;
+    }
+}

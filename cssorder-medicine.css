@@ -1,0 +1,493 @@
+
+/* Заголовок страницы */
+.order-header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 40px 20px;
+    background: linear-gradient(135deg, #dcfce7 0%, #bbf7d0 100%);
+    border-radius: 15px;
+    border: 1px solid #86efac;
+}
+
+.order-header h1 {
+    color: #166534;
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.order-header p {
+    font-size: 1.2rem;
+    color: #166534;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Статистика запросов */
+.request-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.stat-card {
+    background: white;
+    border-radius: 12px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e2e8f0;
+}
+
+.stat-value {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1a5fb4;
+    margin-bottom: 10px;
+}
+
+.stat-label {
+    color: #64748b;
+    font-size: 0.95rem;
+}
+
+/* Форма запроса */
+.request-form-container {
+    background: white;
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.05);
+    margin-bottom: 50px;
+}
+
+.form-steps {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.form-steps::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: 10%;
+    right: 10%;
+    height: 2px;
+    background: #cbd5e1;
+    z-index: 1;
+}
+
+.step-indicator {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    flex: 1;
+}
+
+.step-number {
+    width: 40px;
+    height: 40px;
+    background: #cbd5e1;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 10px;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.step-indicator.active .step-number {
+    background: #1a5fb4;
+    transform: scale(1.1);
+}
+
+.step-label {
+    color: #64748b;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.step-indicator.active .step-label {
+    color: #1a5fb4;
+    font-weight: 600;
+}
+
+/* Формы */
+.form-step {
+    display: none;
+}
+
+.form-step.active {
+    display: block;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.form-row {
+    margin-bottom: 25px;
+}
+
+.form-row label {
+    display: block;
+    margin-bottom: 8px;
+    color: #475569;
+    font-weight: 500;
+}
+
+.form-row input,
+.form-row textarea,
+.form-row select {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.form-row input:focus,
+.form-row textarea:focus,
+.form-row select:focus {
+    outline: none;
+    border-color: #1a5fb4;
+    box-shadow: 0 0 0 3px rgba(26, 95, 180, 0.1);
+}
+
+.medicine-search {
+    position: relative;
+}
+
+.search-suggestions {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    max-height: 200px;
+    overflow-y: auto;
+    display: none;
+    z-index: 100;
+}
+
+.search-suggestions.active {
+    display: block;
+}
+
+.suggestion-item {
+    padding: 10px 15px;
+    cursor: pointer;
+    border-bottom: 1px solid #e2e8f0;
+    transition: background 0.2s;
+}
+
+.suggestion-item:hover {
+    background: #f1f5f9;
+}
+
+.suggestion-item:last-child {
+    border-bottom: none;
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.checkbox-group input {
+    width: auto;
+    margin-top: 5px;
+}
+
+.checkbox-group label {
+    font-weight: normal;
+    font-size: 0.95rem;
+}
+
+/* Навигация формы */
+.form-navigation {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+    padding-top: 25px;
+    border-top: 1px solid #e2e8f0;
+}
+
+.btn-next,
+.btn-prev,
+.btn-submit {
+    padding: 12px 30px;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s;
+    border: none;
+    font-size: 1rem;
+}
+
+.btn-next {
+    background: #1a5fb4;
+    color: white;
+    margin-left: auto;
+}
+
+.btn-prev {
+    background: #f1f5f9;
+    color: #475569;
+    border: 1px solid #cbd5e1;
+}
+
+.btn-submit {
+    background: #10b981;
+    color: white;
+}
+
+.btn-next:hover {
+    background: #2d7bd4;
+}
+
+.btn-prev:hover {
+    background: #e2e8f0;
+}
+
+.btn-submit:hover {
+    background: #34d399;
+}
+
+/* Примеры запросов */
+.examples-section {
+    margin-bottom: 50px;
+}
+
+.examples-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.example-card {
+    background: white;
+    border-radius: 12px;
+    padding: 25px;
+    border: 1px solid #e2e8f0;
+    transition: all 0.3s;
+}
+
+.example-card:hover {
+    border-color: #1a5fb4;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.example-card h4 {
+    color: #1e293b;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+.example-card p {
+    color: #64748b;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+}
+
+.example-status {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.status-found {
+    background: #d1fae5;
+    color: #065f46;
+}
+
+.status-searching {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+/* Процесс обработки */
+.process-steps {
+    background: #f8fafc;
+    border-radius: 15px;
+    padding: 40px;
+    margin-bottom: 50px;
+    border: 1px solid #e2e8f0;
+}
+
+.process-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.process-step {
+    text-align: center;
+    position: relative;
+}
+
+.process-step::after {
+    content: '→';
+    position: absolute;
+    top: 50%;
+    right: -15px;
+    transform: translateY(-50%);
+    color: #cbd5e1;
+    font-size: 1.5rem;
+}
+
+.process-step:last-child::after {
+    display: none;
+}
+
+.process-icon {
+    width: 80px;
+    height: 80px;
+    background: white;
+    border: 2px solid #1a5fb4;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-size: 2rem;
+    color: #1a5fb4;
+}
+
+.process-step h4 {
+    color: #1e293b;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+.process-step p {
+    color: #64748b;
+    font-size: 0.9rem;
+}
+
+/* Гарантии */
+.guarantees-section {
+    margin-bottom: 50px;
+}
+
+.guarantees-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.guarantee-card {
+    background: white;
+    border-radius: 12px;
+    padding: 25px;
+    text-align: center;
+    border: 1px solid #e2e8f0;
+    transition: transform 0.3s;
+}
+
+.guarantee-card:hover {
+    transform: translateY(-5px);
+    border-color: #1a5fb4;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.guarantee-icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    color: #1a5fb4;
+    display: block;
+}
+
+.guarantee-card h4 {
+    color: #1e293b;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+.guarantee-card p {
+    color: #64748b;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .order-header {
+        padding: 30px 15px;
+    }
+    
+    .order-header h1 {
+        font-size: 2rem;
+    }
+    
+    .form-steps::before {
+        display: none;
+    }
+    
+    .form-steps {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .step-indicator {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        text-align: left;
+    }
+    
+    .step-number {
+        margin: 0;
+        flex-shrink: 0;
+    }
+    
+    .process-step::after {
+        display: none;
+    }
+    
+    .process-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .request-form-container {
+        padding: 25px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .request-stats {
+        grid-template-columns: 1fr;
+    }
+    
+    .form-navigation {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .btn-next,
+    .btn-prev,
+    .btn-submit {
+        width: 100%;
+    }
+    
+    .examples-grid,
+    .guarantees-grid {
+        grid-template-columns: 1fr;
+    }
+}
